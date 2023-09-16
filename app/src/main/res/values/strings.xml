@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Semana04Fragments</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="menu_principal">Principal</string>
+    <string name="menu_registro">Registro</string>
+    <string name="menu_musica">Música</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="valtitleprincipal">Fragmentos en Android</string>
+</resources>

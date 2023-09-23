@@ -10,4 +10,26 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="valtitleprincipal">Fragmentos en Android</string>
+    <string name="valetfullname">Enter full name</string>
+    <string name="valetmail">Coloque un correo válido</string>
+
+    <string name="valrbtmale">Male</string>
+    <string name="valrbtfemale">Female</string>
+    <string name="valrbtother">Other</string>
+
+    <string-array name="country_array">
+        <item>Brasil</item>
+        <item>Argentina</item>
+        <item>Colombia</item>
+        <item>Uruguay</item>
+        <item>Ecuador</item>
+        <item>Peru</item>
+    </string-array>
+
+    <string name="valchklicense">License?</string>
+    <string name="valchkcar">Car?</string>
+
+    <string name="valbtnsave">SAVE</string>
+
+
 </resources>

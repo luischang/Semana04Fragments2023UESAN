@@ -14,17 +14,22 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.example.semana04fragments.R
+import com.example.semana04fragments.ui.MainActivity
 import kotlin.io.path.createTempDirectory
 
 class RegistroFragment : Fragment() {
+    private lateinit var sharedViewModel: MainActivity.SharedViewModel
+    private lateinit var sharedClassViewModel: MainActivity.SharedClassViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_registro, container, false)
-
+        sharedViewModel = ViewModelProvider(requireActivity()).get(MainActivity.SharedViewModel::class.java)
+        sharedClassViewModel = ViewModelProvider(requireActivity()).get(MainActivity.SharedClassViewModel::class.java)
         val btnSave: Button = view.findViewById(R.id.btnSave)
         val etFulName: EditText =view.findViewById(R.id.etFullName)
         val etEmail: EditText = view.findViewById(R.id.etEmail)
@@ -32,6 +37,10 @@ class RegistroFragment : Fragment() {
         val rgGender: RadioGroup = view.findViewById(R.id.rgGender)
         val chkLicense: CheckBox = view.findViewById(R.id.chkLicense)
         val chkCar: CheckBox = view.findViewById(R.id.chkCar)
+
+        //set global value
+        etFulName.setText(sharedViewModel.globalVariable)
+        etEmail.setText(sharedClassViewModel.productModel?.price.toString())
 
         ArrayAdapter
             .createFromResource(requireContext(),
@@ -59,7 +68,6 @@ class RegistroFragment : Fragment() {
            var intSelectedButton = rgGender!!.checkedRadioButtonId
            val rbtSelected: RadioButton = view.findViewById(intSelectedButton)
            val genderValue = rbtSelected.text
-
            val allValues =
                "Full Name: $fullNameValue \nEmail: $emailValue \nGender: $genderValue " +
                        "\nCountry: $spCountryValue \nLicense?: ${chkLicense.isChecked} " +
